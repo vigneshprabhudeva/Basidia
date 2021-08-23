@@ -24,15 +24,15 @@ export default function Users() {
                 <div class="row">
                 
                 
-            {data.map(function(val){
+            {userData.map(function(val){
                 return(
                 <div class="column">
                 <div class="card">
                     <img src={usericon} alt="user icon" />
                     <div className="card-info">
                         {val.username}<br/>
-                        {val.age}<br/>
-                        {val.state}</div>
+                        {val.email}<br/>
+                        {val.phone}</div>
                
                 
             </div>
@@ -44,9 +44,9 @@ export default function Users() {
     </div>
     <label class="cardview-label">List view</label>
             <div className="list-view">
-                {data.map(function(val){
+                {userData.map(function(val){
                     return(<div className="list-view-row">
-                    <img src={usericon} className="list-icon" />{val.username}-{val.age}-{val.state}
+                    <img src={usericon} className="list-icon" />{val.username}-{val.email}-{val.phone}
                 </div>)
                 })}
                 

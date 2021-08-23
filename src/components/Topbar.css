@@ -1,0 +1,21 @@
+.Topbar-container{
+    border:2px solid white;
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+    align-items: center;
+  
+}
+.welcome{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+}
+.welcom-note{
+    font-size: 80%;
+    padding: 10px;
+}

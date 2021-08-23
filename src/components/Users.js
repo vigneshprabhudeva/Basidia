@@ -1,12 +1,27 @@
 import React from 'react'
 import './Users.css'
 import usericon from '../images/user-icon.png'
-import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Users() {
 
-    let userData=JSON.parse(localStorage.getItem("user data"))
-    console.log(userData)
+    let [userData,setUserData]=useState(JSON.parse(localStorage.getItem("user data")))
+
+    function search(){
+        let newarr=userData.filter(function(val){
+            
+            if(val.username==document.getElementById("search").value){
+                return 1
+            }else{
+                return 0
+            }
+            
+        })
+        console.log(newarr)
+        setUserData(newarr)
+    }
+
+    
     
     var data=[{username:"username",age:"age",state:"state"},{username:"username",age:"age",state:"state"},{username:"username",age:"age",state:"state"},{username:"username",age:"age",state:"state"},{username:"username",age:"age",state:"state"},{username:"username",age:"age",state:"state"}];
     console.log(data)
@@ -15,7 +30,7 @@ export default function Users() {
             <div className="search">
                 <label class="search-label">search</label>
                 <div className="searchbar-wrapper"><input type="text" id="search" className="search" placeholder="Enter keyword to search"/>
-                <button className="search-button">search</button></div>
+                <button className="search-button" onClick={()=>{search()}}>search</button></div>
                 
             </div>
             <label className="cardview-label">Card view</label>
